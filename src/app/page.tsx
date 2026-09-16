@@ -4,13 +4,21 @@ import Image from "next/image";
 import {
   BookOpen,
   Boxes,
+  Bot,
+  Building2,
   CloudCog,
+  Code2,
+  Cpu,
+  Database,
   FileCode2,
   FileText,
   FolderTree,
   GitBranch,
+  Grid2X2,
   Languages,
+  Monitor,
   NotebookPen,
+  PanelsTopLeft,
   Ticket,
   Workflow,
 } from "lucide-react";
@@ -29,14 +37,14 @@ import { assetPath } from "@/lib/asset-path";
 
 const copy = {
   es: {
-    heroBadge: "Terminal de escritorio",
+    heroBadge: "Orquestador de escritorio",
     heroTitle: "Todo tu flujo de desarrollo en un solo workspace inteligente.",
     heroDescription:
-      "Qhipa reúne shells, archivos, Git y agentes de programación en una terminal visual diseñada para equipos que necesitan moverse más rápido sin perder control.",
+      "Qhipa reúne shells, archivos, Git y agentes de programación en un orquestador visual diseñado para equipos que necesitan moverse más rápido sin perder control.",
     contactAgent: "Contactar a un agente",
     exploreFeatures: "Explorar funcionalidades",
     featuresEyebrow: "Funcionalidades",
-    featuresTitle: "Una terminal que entiende el proyecto, no solo comandos.",
+    featuresTitle: "Un orquestador que entiende el proyecto, no solo comandos.",
     featuresDescription:
       "Qhipa reduce el cambio de contexto entre consola, editor, repositorio, issues y agentes. Todo vive en pestañas persistentes preparadas para trabajos largos y sesiones que puedes retomar.",
     workspaceLabel: "Workspace",
@@ -52,15 +60,15 @@ const copy = {
     integrationsEyebrow: "Integraciones",
     integrationsTitle: "Conecta el trabajo real de tu equipo.",
     productEyebrow: "Producto",
-    productTitle: "Una interfaz real para coordinar agentes, terminales y contexto.",
+    productTitle: "Una interfaz real para coordinar agentes, shells y contexto.",
     productDescription:
       "El workspace de Qhipa mantiene el foco en el flujo activo: agentes a la izquierda, acciones rápidas a la derecha y un composer inferior para conversar con el contexto correcto.",
     ctaEyebrow: "Solicita una demo",
     ctaTitle: "Habla con un agente y ve Qhipa aplicado a tu flujo.",
     ctaDescription:
-      "Cuéntanos cómo trabaja tu equipo hoy y te mostraremos una demo orientada a terminales, Git, Jira, agentes de programación y contexto reutilizable.",
+      "Cuéntanos cómo trabaja tu equipo hoy y te mostraremos una demo orientada a shells, Git, Jira, agentes de programación y contexto reutilizable.",
     footerDescription:
-      "Terminal inteligente para equipos que trabajan con código, agentes, Git e integraciones en un solo espacio.",
+      "Orquestador inteligente para equipos que trabajan con código, agentes, Git e integraciones en un solo espacio.",
     footerNote:
       "Diseñado para equipos que quieren acelerar su desarrollo sin perder visibilidad, contexto ni control operativo.",
     rights: "Todos los derechos reservados.",
@@ -77,14 +85,14 @@ const copy = {
     downloadLinuxNote: "AppImage x86_64",
   },
   en: {
-    heroBadge: "Desktop terminal",
+    heroBadge: "Desktop orchestrator",
     heroTitle: "Your entire development workflow in one intelligent workspace.",
     heroDescription:
-      "Qhipa brings shells, files, Git and programming agents into a visual terminal built for teams that need to move faster without losing control.",
+      "Qhipa brings shells, files, Git and programming agents into a visual orchestrator built for teams that need to move faster without losing control.",
     contactAgent: "Contact an agent",
     exploreFeatures: "Explore features",
     featuresEyebrow: "Features",
-    featuresTitle: "A terminal that understands the project, not just commands.",
+    featuresTitle: "An orchestrator that understands the project, not just commands.",
     featuresDescription:
       "Qhipa reduces context switching between console, editor, repository, issues and agents. Everything lives in persistent tabs ready for long-running work and sessions you can resume.",
     workspaceLabel: "Workspace",
@@ -100,15 +108,15 @@ const copy = {
     integrationsEyebrow: "Integrations",
     integrationsTitle: "Connect your team's real work.",
     productEyebrow: "Product",
-    productTitle: "A real interface to coordinate agents, terminals and context.",
+    productTitle: "A real interface to coordinate agents, shells and context.",
     productDescription:
       "The Qhipa workspace keeps focus on the active flow: agents on the left, quick actions on the right and a bottom composer to chat with the right context.",
     ctaEyebrow: "Request a demo",
     ctaTitle: "Talk to an agent and see Qhipa applied to your workflow.",
     ctaDescription:
-      "Tell us how your team works today and we'll show you a demo focused on terminals, Git, Jira, programming agents and reusable context.",
+      "Tell us how your team works today and we'll show you a demo focused on shells, Git, Jira, programming agents and reusable context.",
     footerDescription:
-      "An intelligent terminal for teams working with code, agents, Git and integrations in one space.",
+      "An intelligent orchestrator for teams working with code, agents, Git and integrations in one space.",
     footerNote:
       "Designed for teams that want to accelerate development without losing visibility, context or operational control.",
     rights: "All rights reserved.",
@@ -203,11 +211,51 @@ const integrationCards = [
   },
 ];
 
+const integrationFlow = {
+  sources: [
+    { label: "Copilot", icon: Bot },
+    { label: "Claude", icon: SparkIcon },
+    { label: "Cursor", icon: Code2 },
+    { label: "Apps", icon: Grid2X2 },
+  ],
+  modules: [
+    { label: "Agentic Terminal", icon: Monitor },
+    { label: "Gravity Client", icon: Cpu },
+    { label: "Unified Context", icon: PanelsTopLeft },
+    { label: "Telemetry", icon: Workflow },
+    { label: "Agent Registry", icon: Bot },
+    { label: "Tools", icon: CloudCog },
+  ],
+  targets: [
+    { label: "Modelos", icon: Cpu },
+    { label: "APIs", icon: Code2 },
+    { label: "Datos", icon: Database },
+    { label: "Sistemas", icon: Building2 },
+  ],
+};
+
+function SparkIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M12 2.75V21.25M2.75 12H21.25M5.46 5.46L18.54 18.54M18.54 5.46L5.46 18.54"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.8"
+      />
+      <path
+        d="M12 7.5L13.4 10.6L16.5 12L13.4 13.4L12 16.5L10.6 13.4L7.5 12L10.6 10.6L12 7.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
 type FooterLink = {
   label: string;
   href: string;
   external?: boolean;
-  action?: "cookies";
+  action?: "contact" | "cookies";
 };
 
 type FooterColumn = {
@@ -228,8 +276,7 @@ const footerColumns: FooterColumn[] = [
   {
     title: "Empresa",
     links: [
-      { label: "Raven", href: "https://www.raven.inc/en", external: true },
-      { label: "Contacto", href: "#contacto" },
+      { label: "Contacto", href: "#contacto", action: "contact" },
     ],
   },
   {
@@ -398,7 +445,7 @@ export default function Home() {
         id="integraciones"
         className="relative mx-auto w-full max-w-7xl scroll-mt-24 px-6 py-20 sm:px-10 lg:px-12"
       >
-        <ScrollReveal className="border-glow rounded-[2.5rem] border border-border-subtle bg-surface/80 p-6 sm:p-10">
+        <ScrollReveal className="border-glow rounded-[2.5rem] border border-border-subtle bg-canvas p-6 sm:p-10">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-primary">
@@ -410,24 +457,95 @@ export default function Home() {
             </div>
 
             <div className="grid gap-4">
-              {integrationCards.map(({ title, icon: Icon, description }, index) => (
-                <ScrollReveal
-                  key={title.es}
-                  className="border-glow group rounded-3xl border border-border-subtle bg-surface-elevated p-6 transition duration-300 [transform-style:preserve-3d] hover:scale-[1.025] hover:rotate-x-2 hover:-rotate-y-2 hover:border-border-active hover:bg-surface-subtle hover:shadow-2xl hover:shadow-black/40"
-                  delay={index * 80}
-                >
-                  <Icon className="size-6 text-text-dim transition group-hover:translate-z-4 group-hover:text-primary" />
-                  <h3 className="mt-4 text-xl font-semibold text-text-primary transition group-hover:text-primary">
-                    {title[language]}
-                  </h3>
-                  <p className="mt-3 leading-7 text-text-muted">
-                    {description[language]}
-                  </p>
-                </ScrollReveal>
-              ))}
+              <ScrollReveal delay={160}>
+                <div className="relative overflow-hidden rounded-[2rem] bg-surface-elevated/70 p-5 shadow-2xl shadow-black/20 sm:p-6">
+                  <div className="relative">
+                    <p className="text-center text-xs font-semibold uppercase tracking-[0.22em] text-text-dim">
+                      Aplicaciones
+                    </p>
+
+                    <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                      {integrationFlow.sources.map(({ label, icon: Icon }) => (
+                        <div
+                          key={label}
+                          className="group flex min-h-20 items-center gap-3 rounded-[1.25rem] border border-border-subtle bg-[#07080a] px-4 py-4 text-left transition hover:border-border-active hover:bg-surface"
+                        >
+                          <Icon className="size-5 shrink-0 text-text-dim transition group-hover:text-primary" />
+                          <span className="text-sm font-semibold leading-tight text-text-primary sm:text-base">
+                            {label}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mx-auto my-5 h-8 w-px bg-gradient-to-b from-text-dim/0 via-text-dim/60 to-text-dim/0" />
+
+                    <div className="rounded-[1.75rem] border border-primary/20 bg-surface p-5 shadow-2xl shadow-primary/10">
+                      <div className="flex items-center justify-center">
+                        <Image
+                          src={assetPath("/brand/logotipo-qhipa.svg")}
+                          alt="Qhipa"
+                          width={630}
+                          height={124}
+                          className="h-9 w-auto"
+                        />
+                      </div>
+
+                      <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        {integrationFlow.modules.map(({ label, icon: Icon }) => (
+                          <div
+                            key={label}
+                            className="flex min-h-24 flex-col items-start justify-center gap-2 rounded-[1.35rem] border border-white/10 bg-[#07080a]/80 p-4 text-left backdrop-blur-sm transition hover:border-primary/40 hover:bg-surface"
+                          >
+                            <Icon className="size-5 text-text-dim" />
+                            <span className="text-sm font-semibold leading-tight text-text-primary sm:text-base">
+                              {label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mx-auto my-5 h-8 w-px bg-gradient-to-b from-text-dim/0 via-text-dim/60 to-text-dim/0" />
+
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                      {integrationFlow.targets.map(({ label, icon: Icon }) => (
+                        <div
+                          key={label}
+                          className="group flex min-h-20 items-center gap-3 rounded-[1.25rem] border border-border-subtle bg-[#07080a] px-4 py-4 text-left transition hover:border-border-active hover:bg-surface"
+                        >
+                          <Icon className="size-5 shrink-0 text-text-dim transition group-hover:text-primary" />
+                          <span className="text-sm font-semibold leading-tight text-text-primary sm:text-base">
+                            {label}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
           </div>
+
         </ScrollReveal>
+
+        <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          {integrationCards.map(({ title, icon: Icon, description }, index) => (
+            <ScrollReveal
+              key={title.es}
+              className="border-glow group rounded-3xl border border-border-subtle bg-surface-elevated p-6 transition duration-300 [transform-style:preserve-3d] hover:scale-[1.025] hover:rotate-x-2 hover:-rotate-y-2 hover:border-border-active hover:bg-surface-subtle hover:shadow-2xl hover:shadow-black/40"
+              delay={index * 80}
+            >
+              <Icon className="size-6 text-text-dim transition group-hover:translate-z-4 group-hover:text-primary" />
+              <h3 className="mt-4 text-xl font-semibold text-text-primary transition group-hover:text-primary">
+                {title[language]}
+              </h3>
+              <p className="mt-3 leading-7 text-text-muted">
+                {description[language]}
+              </p>
+            </ScrollReveal>
+          ))}
+        </div>
       </section>
 
       <section className="relative mx-auto w-full max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
@@ -563,7 +681,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="relative border-t border-primary/10 bg-[#080C0A] px-6 py-14 sm:px-10 lg:px-12">
+      <footer className="relative border-t border-border-active bg-[#080C0A] px-6 py-14 sm:px-10 lg:px-12">
         <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div className="max-w-md">
             <a href="#" className="inline-flex" aria-label="Qhipa">
@@ -572,7 +690,7 @@ export default function Home() {
                 alt="Qhipa"
                 width={630}
                 height={124}
-                className="h-9 w-auto"
+                className="h-12 w-auto sm:h-14"
               />
             </a>
             <p className="mt-3 max-w-md text-sm leading-6 text-text-muted">
@@ -597,6 +715,12 @@ export default function Home() {
                           {link.label}
                         </span>
                       </CookiesModal>
+                    ) : link.action === "contact" ? (
+                      <ContactModal key={link.label}>
+                        <span className="cursor-pointer text-left transition hover:text-primary">
+                          {link.label}
+                        </span>
+                      </ContactModal>
                     ) : (
                       <a
                         key={link.label}
@@ -613,7 +737,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="border-t border-primary/15 pt-6 text-center text-sm text-text-dim lg:col-span-2">
+          <div className="border-t border-border-active pt-6 text-center text-sm text-text-dim lg:col-span-2">
             <p>
               © {new Date().getFullYear()} Qhipa. {t.rights}
             </p>

@@ -21,7 +21,7 @@ export function SiteNavbar() {
 
   return (
     <header className="fixed inset-x-0 top-5 z-50 px-4 sm:px-10 lg:px-12">
-      <nav className="mx-auto max-w-7xl rounded-[1.75rem] border border-border-subtle bg-surface/70 shadow-2xl shadow-black/20 backdrop-blur-xl md:rounded-full">
+      <nav className="mx-auto max-w-7xl rounded-[1.75rem] bg-surface/70 shadow-2xl shadow-black/20 backdrop-blur-xl md:rounded-full">
         <div className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-4">
           <a href="#" className="flex items-center" aria-label="Qhipa">
             <Image
@@ -30,7 +30,7 @@ export function SiteNavbar() {
               width={630}
               height={124}
               priority
-              className="h-7 w-auto sm:h-8"
+              className="h-9 w-auto sm:h-10"
             />
           </a>
 

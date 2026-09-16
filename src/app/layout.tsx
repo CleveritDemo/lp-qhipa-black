@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { LanguageProvider } from "@/components/language-provider";
 import { assetPath } from "@/lib/asset-path";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 const siteUrl = "https://qhipa.ai";
-const title = "Qhipa | Terminal inteligente para equipos de desarrollo";
+const title = "Qhipa | Orquestador inteligente para equipos de desarrollo";
 const description =
-  "Qhipa reúne terminales, archivos, Git, Jira, GitHub Actions y agentes de programación en un solo workspace para macOS.";
+  "Qhipa reúne shells, archivos, Git, Jira, GitHub Actions y agentes de programación en un solo workspace para macOS.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://qhipa.ai"),
@@ -29,7 +25,7 @@ export const metadata: Metadata = {
   publisher: "Cleverit",
   keywords: [
     "Qhipa",
-    "terminal macOS",
+    "orquestador macOS",
     "AI agents",
     "developer tools",
     "Git workflow",
@@ -57,7 +53,7 @@ export const metadata: Metadata = {
         url: assetPath("/og-image.png"),
         width: 1200,
         height: 630,
-        alt: "Qhipa, terminal inteligente para equipos de desarrollo",
+        alt: "Qhipa, orquestador inteligente para equipos de desarrollo",
       },
     ],
   },
@@ -84,7 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      className={`${openSans.variable} dark h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
         <LanguageProvider>{children}</LanguageProvider>

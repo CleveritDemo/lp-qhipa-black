@@ -15,7 +15,7 @@ Al ejecutar `npm run dev`, los cambios se sincronizan automáticamente en `src/a
   --color-primary-fg: #0c1814;
 
   --color-border-subtle: #15152cff;
-  --color-border-active: #3b1433;
+  --color-border-active: #0b0618ff;
 
   --color-text-primary: #f4f4f6;
   --color-text-muted: #8e919a;

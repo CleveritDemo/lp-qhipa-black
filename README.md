@@ -1,6 +1,6 @@
 # Qhipa Landing Page
 
-Landing page para **Qhipa**, una terminal de escritorio para macOS que reúne shells, archivos, Git y agentes de programación en un mismo espacio de trabajo.
+Landing page para **Qhipa**, un orquestador inteligente para macOS que reúne shells, archivos, Git y agentes de programación en un mismo espacio de trabajo.
 
 El sitio está construido con Next.js, React, TypeScript, Tailwind CSS v4 y un sistema simple de tokens generado desde `design.md`.
 
@@ -90,7 +90,7 @@ Para habilitarlo en GitHub:
 URL esperada después del deploy:
 
 ```text
-https://cleveritdemo.github.io/lp-qhipa/
+https://cleveritdemo.github.io/lp-qhipa-black/
 ```
 
 ## Marca
