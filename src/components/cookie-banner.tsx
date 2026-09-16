@@ -9,9 +9,11 @@ export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem(CONSENT_KEY)) {
-      setVisible(true);
-    }
+    const timeoutId = window.setTimeout(() => {
+      setVisible(!localStorage.getItem(CONSENT_KEY));
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
   }, []);
 
   function handleAcceptAll() {

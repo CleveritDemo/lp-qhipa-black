@@ -683,16 +683,26 @@ export default function Home() {
 
       <footer className="relative border-t border-border-active bg-[#080C0A] px-6 py-14 sm:px-10 lg:px-12">
         <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr]">
-          <div className="max-w-md">
-            <a href="#" className="inline-flex" aria-label="Qhipa">
+          <div className="max-w-xl">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+              <a href="#" className="inline-flex" aria-label="Qhipa">
+                <Image
+                  src={assetPath("/brand/logotipo-qhipa-footer.svg")}
+                  alt="Qhipa"
+                  width={630}
+                  height={124}
+                  className="h-12 w-auto sm:h-14"
+                />
+              </a>
+              <div className="hidden h-16 w-px bg-white/55 sm:block" />
               <Image
-                src={assetPath("/brand/logotipo-qhipa-footer.svg")}
-                alt="Qhipa"
-                width={630}
-                height={124}
-                className="h-12 w-auto sm:h-14"
+                src={assetPath("/brand/bycredicorp.svg")}
+                alt="Desarrollado por Credicorp"
+                width={1208}
+                height={254}
+                className="h-auto w-full max-w-[190px]"
               />
-            </a>
+            </div>
             <p className="mt-3 max-w-md text-sm leading-6 text-text-muted">
               {t.footerDescription}
             </p>

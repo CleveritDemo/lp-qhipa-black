@@ -272,7 +272,6 @@ const DotField = memo(function DotField({
       resizeObserver.disconnect();
       window.removeEventListener("mousemove", onMouseMove);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
