@@ -18,6 +18,8 @@ import { ContactModal } from "@/components/contact-modal";
 import { CookieBanner } from "@/components/cookie-banner";
 import { CookiesModal } from "@/components/cookies-modal";
 import DotField from "@/components/dot-field";
+import { HeroDome } from "@/components/hero-dome";
+import { HeroParticles } from "@/components/hero-particles";
 import { useLanguage } from "@/components/language-provider";
 import { ProductMockup } from "@/components/product-mockup";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -30,13 +32,13 @@ const copy = {
     heroBadge: "Terminal de escritorio",
     heroTitle: "Todo tu flujo de desarrollo en un solo workspace inteligente.",
     heroDescription:
-      "Nexi code reúne shells, archivos, Git y agentes de programación en una terminal visual diseñada para equipos que necesitan moverse más rápido sin perder control.",
+      "Qhipa reúne shells, archivos, Git y agentes de programación en una terminal visual diseñada para equipos que necesitan moverse más rápido sin perder control.",
     contactAgent: "Contactar a un agente",
     exploreFeatures: "Explorar funcionalidades",
     featuresEyebrow: "Funcionalidades",
     featuresTitle: "Una terminal que entiende el proyecto, no solo comandos.",
     featuresDescription:
-      "Nexi code reduce el cambio de contexto entre consola, editor, repositorio, issues y agentes. Todo vive en pestañas persistentes preparadas para trabajos largos y sesiones que puedes retomar.",
+      "Qhipa reduce el cambio de contexto entre consola, editor, repositorio, issues y agentes. Todo vive en pestañas persistentes preparadas para trabajos largos y sesiones que puedes retomar.",
     workspaceLabel: "Workspace",
     workspaceTitle: "Shells, archivos y Git en el mismo lugar",
     agentsLabel: "Agentes",
@@ -52,9 +54,9 @@ const copy = {
     productEyebrow: "Producto",
     productTitle: "Una interfaz real para coordinar agentes, terminales y contexto.",
     productDescription:
-      "El workspace de Nexi code mantiene el foco en el flujo activo: agentes a la izquierda, acciones rápidas a la derecha y un composer inferior para conversar con el contexto correcto.",
+      "El workspace de Qhipa mantiene el foco en el flujo activo: agentes a la izquierda, acciones rápidas a la derecha y un composer inferior para conversar con el contexto correcto.",
     ctaEyebrow: "Solicita una demo",
-    ctaTitle: "Habla con un agente y ve Nexi code aplicado a tu flujo.",
+    ctaTitle: "Habla con un agente y ve Qhipa aplicado a tu flujo.",
     ctaDescription:
       "Cuéntanos cómo trabaja tu equipo hoy y te mostraremos una demo orientada a terminales, Git, Jira, agentes de programación y contexto reutilizable.",
     footerDescription:
@@ -63,7 +65,7 @@ const copy = {
       "Diseñado para equipos que quieren acelerar su desarrollo sin perder visibilidad, contexto ni control operativo.",
     rights: "Todos los derechos reservados.",
     downloadEyebrow: "Descarga",
-    downloadTitle: "Instala Nexi code en tu sistema operativo.",
+    downloadTitle: "Instala Qhipa en tu sistema operativo.",
     downloadDescription:
       "Disponible para macOS, Windows y Linux. Descarga la versión que necesitas y empieza a trabajar en minutos.",
     downloadMac: "macOS",
@@ -71,7 +73,6 @@ const copy = {
     downloadLinux: "Linux",
     downloadSoon: "Próximamente",
     downloadMacNote: "Apple Silicon",
-    downloadMacIntel: "Intel",
     downloadWindowsNote: "Instalador x64",
     downloadLinuxNote: "AppImage x86_64",
   },
@@ -79,13 +80,13 @@ const copy = {
     heroBadge: "Desktop terminal",
     heroTitle: "Your entire development workflow in one intelligent workspace.",
     heroDescription:
-      "Nexi code brings shells, files, Git and programming agents into a visual terminal built for teams that need to move faster without losing control.",
+      "Qhipa brings shells, files, Git and programming agents into a visual terminal built for teams that need to move faster without losing control.",
     contactAgent: "Contact an agent",
     exploreFeatures: "Explore features",
     featuresEyebrow: "Features",
     featuresTitle: "A terminal that understands the project, not just commands.",
     featuresDescription:
-      "Nexi code reduces context switching between console, editor, repository, issues and agents. Everything lives in persistent tabs ready for long-running work and sessions you can resume.",
+      "Qhipa reduces context switching between console, editor, repository, issues and agents. Everything lives in persistent tabs ready for long-running work and sessions you can resume.",
     workspaceLabel: "Workspace",
     workspaceTitle: "Shells, files and Git in the same place",
     agentsLabel: "Agents",
@@ -101,9 +102,9 @@ const copy = {
     productEyebrow: "Product",
     productTitle: "A real interface to coordinate agents, terminals and context.",
     productDescription:
-      "The Nexi code workspace keeps focus on the active flow: agents on the left, quick actions on the right and a bottom composer to chat with the right context.",
+      "The Qhipa workspace keeps focus on the active flow: agents on the left, quick actions on the right and a bottom composer to chat with the right context.",
     ctaEyebrow: "Request a demo",
-    ctaTitle: "Talk to an agent and see Nexi code applied to your workflow.",
+    ctaTitle: "Talk to an agent and see Qhipa applied to your workflow.",
     ctaDescription:
       "Tell us how your team works today and we'll show you a demo focused on terminals, Git, Jira, programming agents and reusable context.",
     footerDescription:
@@ -112,7 +113,7 @@ const copy = {
       "Designed for teams that want to accelerate development without losing visibility, context or operational control.",
     rights: "All rights reserved.",
     downloadEyebrow: "Download",
-    downloadTitle: "Install Nexi code on your operating system.",
+    downloadTitle: "Install Qhipa on your operating system.",
     downloadDescription:
       "Available for macOS, Windows and Linux. Download the version you need and start working in minutes.",
     downloadMac: "macOS",
@@ -120,21 +121,15 @@ const copy = {
     downloadLinux: "Linux",
     downloadSoon: "Coming soon",
     downloadMacNote: "Apple Silicon",
-    downloadMacIntel: "Intel",
     downloadWindowsNote: "x64 installer",
     downloadLinuxNote: "AppImage x86_64",
   },
 };
 
-const DOWNLOAD_BASE = "https://downloads.nexicode.ai";
-const APP_VERSION = "0.1.0";
 const downloads = {
-  macArm: `${DOWNLOAD_BASE}/Nexicode-${APP_VERSION}-arm64.dmg`,
-  macIntel: `${DOWNLOAD_BASE}/Nexicode-${APP_VERSION}-x64.dmg`,
-  windows: `${DOWNLOAD_BASE}/Nexicode-${APP_VERSION}-setup-x64.exe`,
-  linuxAppImage: `${DOWNLOAD_BASE}/Nexicode-${APP_VERSION}-x86_64.AppImage`,
-  linuxDeb: `${DOWNLOAD_BASE}/Nexicode-${APP_VERSION}-amd64.deb`,
-  linuxPacman: `${DOWNLOAD_BASE}/Nexicode-${APP_VERSION}-x64.pacman`,
+  mac: "https://github.com/credicorp-internal/qhipa-manifest/releases/download/v1.27.0/Qhipa-Platform-1.27.0-arm64.dmg",
+  windows: "https://github.com/credicorp-internal/qhipa-manifest/releases/download/v1.27.0/Qhipa-Platform-1.27.0-setup-x64.exe",
+  linux: "https://github.com/credicorp-internal/qhipa-manifest/releases/download/v1.27.0/Qhipa-Platform-1.27.0-x86_64.AppImage",
 };
 
 const workspaceFeatures = {
@@ -260,8 +255,13 @@ export default function Home() {
 
       <SiteNavbar />
 
-      <section className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-8 pt-36 sm:px-10 lg:px-12">
-        <div className="flex flex-1 items-center justify-center py-20 lg:py-24">
+      <section className="relative flex min-h-screen w-full flex-col overflow-hidden px-6 pb-8 pt-36 sm:px-10 lg:px-12">
+        <HeroDome />
+        <HeroParticles />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-56 bg-canvas/0 backdrop-blur-[10px] [mask-image:linear-gradient(to_top,black_0%,black_35%,transparent_100%)]" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-[2] w-20 bg-gradient-to-r from-canvas/70 to-transparent backdrop-blur-[2px] sm:w-28 lg:w-36" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-[2] w-20 bg-gradient-to-l from-canvas/70 to-transparent backdrop-blur-[2px] sm:w-28 lg:w-36" />
+        <div className="relative z-20 mx-auto flex w-full max-w-7xl flex-1 items-center justify-center py-20 lg:py-24">
           <ScrollReveal className="mx-auto w-full text-center" delay={100}>
             <div className="mx-auto max-w-5xl">
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border-active bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -460,8 +460,8 @@ export default function Home() {
           dotSpacing={16}
           cursorRadius={400}
           bulgeStrength={50}
-          gradientFrom="rgba(52, 224, 164, 0.5)"
-          gradientTo="rgba(52, 224, 164, 0.2)"
+          gradientFrom="rgba(243, 41, 183, 0.5)"
+          gradientTo="rgba(169, 41, 243, 0.2)"
           glowColor="transparent"
         />
         <ScrollReveal className="relative z-10 mx-auto max-w-3xl px-6 text-center sm:px-10 lg:px-12">
@@ -479,7 +479,7 @@ export default function Home() {
             {/* macOS */}
             <div className="flex w-full flex-col items-center gap-2 sm:w-auto">
             <a
-              href={downloads.macArm}
+              href={downloads.mac}
               className="group inline-flex h-14 w-full items-center justify-center gap-3 rounded-2xl border border-border-subtle bg-surface-elevated/80 px-6 text-base font-semibold text-text-primary backdrop-blur-sm transition hover:border-primary hover:bg-primary/10 hover:text-primary sm:w-auto sm:min-w-[180px]"
             >
               <svg className="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -488,12 +488,7 @@ export default function Home() {
               </svg>
               {t.downloadMac}
             </a>
-              <p className="text-xs text-text-muted">
-                {t.downloadMacNote} ·{" "}
-                <a href={downloads.macIntel} className="underline-offset-4 hover:text-primary hover:underline">
-                  {t.downloadMacIntel}
-                </a>
-              </p>
+              <p className="text-xs text-text-muted">{t.downloadMacNote}</p>
             </div>
 
             {/* Windows */}
@@ -515,7 +510,7 @@ export default function Home() {
             {/* Linux */}
             <div className="flex w-full flex-col items-center gap-2 sm:w-auto">
             <a
-              href={downloads.linuxAppImage}
+              href={downloads.linux}
               className="group inline-flex h-14 w-full items-center justify-center gap-3 rounded-2xl border border-border-subtle bg-surface-elevated/80 px-6 text-base font-semibold text-text-primary backdrop-blur-sm transition hover:border-primary hover:bg-primary/10 hover:text-primary sm:w-auto sm:min-w-[180px]"
             >
               <svg className="size-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -526,16 +521,7 @@ export default function Home() {
               </svg>
               {t.downloadLinux}
             </a>
-              <p className="text-xs text-text-muted">
-                {t.downloadLinuxNote} ·{" "}
-                <a href={downloads.linuxDeb} className="underline-offset-4 hover:text-primary hover:underline">
-                  .deb
-                </a>{" "}
-                ·{" "}
-                <a href={downloads.linuxPacman} className="underline-offset-4 hover:text-primary hover:underline">
-                  .pacman
-                </a>
-              </p>
+              <p className="text-xs text-text-muted">{t.downloadLinuxNote}</p>
             </div>
           </div>
         </ScrollReveal>
@@ -551,8 +537,8 @@ export default function Home() {
           dotSpacing={16}
           cursorRadius={400}
           bulgeStrength={50}
-          gradientFrom="rgba(52, 224, 164, 0.5)"
-          gradientTo="rgba(52, 224, 164, 0.2)"
+          gradientFrom="rgba(243, 41, 183, 0.5)"
+          gradientTo="rgba(169, 41, 243, 0.2)"
           glowColor="transparent"
         />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-12">
@@ -580,10 +566,10 @@ export default function Home() {
       <footer className="relative border-t border-primary/10 bg-[#080C0A] px-6 py-14 sm:px-10 lg:px-12">
         <div className="mx-auto grid w-full max-w-7xl gap-10 lg:grid-cols-[1.2fr_1fr]">
           <div className="max-w-md">
-            <a href="#" className="inline-flex" aria-label="Nexi code">
+            <a href="#" className="inline-flex" aria-label="Qhipa">
               <Image
-                src={assetPath("/brand/logotipo-nexicode-footer.svg")}
-                alt="Nexi code"
+                src={assetPath("/brand/logotipo-qhipa-footer.svg")}
+                alt="Qhipa"
                 width={630}
                 height={124}
                 className="h-9 w-auto"
@@ -629,7 +615,7 @@ export default function Home() {
 
           <div className="border-t border-primary/15 pt-6 text-center text-sm text-text-dim lg:col-span-2">
             <p>
-              © {new Date().getFullYear()} Nexi code. {t.rights}
+              © {new Date().getFullYear()} Qhipa. {t.rights}
             </p>
           </div>
         </div>

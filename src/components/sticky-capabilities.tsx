@@ -40,7 +40,7 @@ export function StickyCapabilities() {
         {capabilities.map(({ title, description, icon: Icon }, index) => (
           <article
             key={title}
-            className="border-glow group rounded-[2rem] border border-border-subtle bg-surface/80 p-6 transition duration-300 [transform-style:preserve-3d] hover:scale-[1.025] hover:rotate-x-2 hover:-rotate-y-2 hover:border-border-active hover:bg-surface-subtle hover:shadow-2xl hover:shadow-black/40"
+            className="border-glow group rounded-[2rem] border border-border-subtle bg-canvas p-6 transition duration-300 [transform-style:preserve-3d] hover:scale-[1.025] hover:rotate-x-2 hover:-rotate-y-2 hover:border-border-active hover:bg-surface-subtle hover:shadow-2xl hover:shadow-black/40"
           >
             <div className="flex items-center justify-between">
               <span className="rounded-full border border-border-subtle bg-surface-elevated px-3 py-1 text-xs font-semibold text-text-muted">

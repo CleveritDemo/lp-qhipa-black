@@ -23,10 +23,10 @@ export function SiteNavbar() {
     <header className="fixed inset-x-0 top-5 z-50 px-4 sm:px-10 lg:px-12">
       <nav className="mx-auto max-w-7xl rounded-[1.75rem] border border-border-subtle bg-surface/70 shadow-2xl shadow-black/20 backdrop-blur-xl md:rounded-full">
         <div className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-4">
-          <a href="#" className="flex items-center" aria-label="Nexi code">
+          <a href="#" className="flex items-center" aria-label="Qhipa">
             <Image
-              src={assetPath("/brand/logotipo-nexicode.svg")}
-              alt="Nexi code"
+              src={assetPath("/brand/logotipo-qhipa.svg")}
+              alt="Qhipa"
               width={630}
               height={124}
               priority

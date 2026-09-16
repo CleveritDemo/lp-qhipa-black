@@ -3,15 +3,15 @@ import Link from "next/link";
 import { ArrowLeft, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Política de privacidad | Nexi code",
+  title: "Política de privacidad | Qhipa",
   description:
-    "Política de privacidad de Nexi code, un producto de Raven. Datos tratados, base legal, derechos RGPD y Ley 19.628 de Chile.",
+    "Política de privacidad de Qhipa, un producto de Raven. Datos tratados, base legal, derechos RGPD y Ley 19.628 de Chile.",
 };
 
 const sections = [
   {
     title: "Responsable del tratamiento",
-    body: "Raven, en su calidad de responsable, trata los datos recogidos a través de Nexi code. Puedes contactarnos en privacy@nexicode.dev para cualquier asunto relativo a esta política.",
+    body: "Raven, en su calidad de responsable, trata los datos recogidos a través de Qhipa. Puedes contactarnos en privacy@qhipa.dev para cualquier asunto relativo a esta política.",
   },
   {
     title: "Qué datos recogemos",
@@ -27,11 +27,11 @@ const sections = [
   },
   {
     title: "Datos de la plataforma",
-    body: "Cuando conectas tus repositorios, Nexi code accede mediante tokens y claves API con verificación SSL. Procesamos metadatos de actividad de desarrollo, no el contenido de tu código fuente, y actuamos como encargado del tratamiento bajo tu instrucción.",
+    body: "Cuando conectas tus repositorios, Qhipa accede mediante tokens y claves API con verificación SSL. Procesamos metadatos de actividad de desarrollo, no el contenido de tu código fuente, y actuamos como encargado del tratamiento bajo tu instrucción.",
   },
   {
     title: "Tus derechos",
-    body: "Puedes acceder, rectificar, suprimir, oponerte o solicitar la portabilidad de tus datos, y retirar tu consentimiento en cualquier momento escribiendo a privacy@nexicode.dev. También puedes reclamar ante la autoridad de control de tu país.",
+    body: "Puedes acceder, rectificar, suprimir, oponerte o solicitar la portabilidad de tus datos, y retirar tu consentimiento en cualquier momento escribiendo a privacy@qhipa.dev. También puedes reclamar ante la autoridad de control de tu país.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function PrivacidadPage() {
             Política de privacidad
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-text-muted">
-            Nexi code es un producto de Raven. Esta política explica qué datos
+            Qhipa es un producto de Raven. Esta política explica qué datos
             tratamos cuando visitas el sitio o usas la plataforma, con qué base
             legal y qué derechos tienes bajo el RGPD y la Ley 19.628 de Chile.
           </p>

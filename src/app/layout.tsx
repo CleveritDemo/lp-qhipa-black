@@ -14,21 +14,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://nexicode.ai";
-const title = "Nexi code | Terminal inteligente para equipos de desarrollo";
+const siteUrl = "https://qhipa.ai";
+const title = "Qhipa | Terminal inteligente para equipos de desarrollo";
 const description =
-  "Nexi code reúne terminales, archivos, Git, Jira, GitHub Actions y agentes de programación en un solo workspace para macOS.";
+  "Qhipa reúne terminales, archivos, Git, Jira, GitHub Actions y agentes de programación en un solo workspace para macOS.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexicode.ai"),
+  metadataBase: new URL("https://qhipa.ai"),
   title,
   description,
-  applicationName: "Nexi code",
+  applicationName: "Qhipa",
   authors: [{ name: "Cleverit" }],
   creator: "Cleverit",
   publisher: "Cleverit",
   keywords: [
-    "Nexi code",
+    "Qhipa",
     "terminal macOS",
     "AI agents",
     "developer tools",
@@ -49,15 +49,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CL",
     url: siteUrl,
-    siteName: "Nexi code",
+    siteName: "Qhipa",
     title,
     description,
     images: [
       {
-        url: assetPath("/org-image.png"),
+        url: assetPath("/og-image.png"),
         width: 1200,
         height: 630,
-        alt: "Nexi code, terminal inteligente para equipos de desarrollo",
+        alt: "Qhipa, terminal inteligente para equipos de desarrollo",
       },
     ],
   },
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: [assetPath("/org-image.png")],
+    images: [assetPath("/og-image.png")],
   },
   robots: {
     index: true,

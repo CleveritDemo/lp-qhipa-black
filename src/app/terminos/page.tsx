@@ -3,15 +3,15 @@ import Link from "next/link";
 import { ArrowLeft, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Términos de servicio | Nexi code",
+  title: "Términos de servicio | Qhipa",
   description:
-    "Condiciones de uso del sitio y de la plataforma Nexi code, un producto de Raven. Cuentas, licencias, propiedad intelectual y ley aplicable.",
+    "Condiciones de uso del sitio y de la plataforma Qhipa, un producto de Raven. Cuentas, licencias, propiedad intelectual y ley aplicable.",
 };
 
 const sections = [
   {
     title: "Servicio",
-    body: "Nexi code es una plataforma de engineering intelligence entregada como SaaS o desplegada en la infraestructura del cliente. El alcance concreto, los módulos y los niveles de servicio se detallan en el acuerdo comercial firmado.",
+    body: "Qhipa es una plataforma de engineering intelligence entregada como SaaS o desplegada en la infraestructura del cliente. El alcance concreto, los módulos y los niveles de servicio se detallan en el acuerdo comercial firmado.",
   },
   {
     title: "Cuentas y licencias",
@@ -23,7 +23,7 @@ const sections = [
   },
   {
     title: "Propiedad intelectual",
-    body: "Nexi code y sus componentes son propiedad de Raven. Los datos del cliente, incluidos los metadatos de sus repositorios y los informes generados, son y siguen siendo propiedad del cliente.",
+    body: "Qhipa y sus componentes son propiedad de Raven. Los datos del cliente, incluidos los metadatos de sus repositorios y los informes generados, son y siguen siendo propiedad del cliente.",
   },
   {
     title: "Disponibilidad y responsabilidad",
@@ -69,7 +69,7 @@ export default function TerminosPage() {
             Términos de servicio
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-text-muted">
-            Estas condiciones rigen el uso del sitio y de la plataforma Nexi code.
+            Estas condiciones rigen el uso del sitio y de la plataforma Qhipa.
             Al contratar un plan o iniciar un piloto, aceptas
             lo siguiente.
           </p>

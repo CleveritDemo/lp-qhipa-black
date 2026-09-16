@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://nexicode.ai/sitemap.xml",
+    sitemap: "https://qhipa.ai/sitemap.xml",
   };
 }

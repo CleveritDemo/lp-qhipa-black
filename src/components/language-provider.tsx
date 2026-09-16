@@ -16,7 +16,7 @@ type LanguageContextValue = {
   toggleLanguage: () => void;
 };
 
-const LANGUAGE_KEY = "nexicode-language";
+const LANGUAGE_KEY = "qhipa-language";
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

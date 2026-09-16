@@ -1,6 +1,6 @@
-# Nexi code Landing Page
+# Qhipa Landing Page
 
-Landing page para **Nexi code**, una terminal de escritorio para macOS que reúne shells, archivos, Git y agentes de programación en un mismo espacio de trabajo.
+Landing page para **Qhipa**, una terminal de escritorio para macOS que reúne shells, archivos, Git y agentes de programación en un mismo espacio de trabajo.
 
 El sitio está construido con Next.js, React, TypeScript, Tailwind CSS v4 y un sistema simple de tokens generado desde `design.md`.
 
@@ -90,17 +90,17 @@ Para habilitarlo en GitHub:
 URL esperada después del deploy:
 
 ```text
-https://cleveritdemo.github.io/lp-nexicode/
+https://cleveritdemo.github.io/lp-qhipa/
 ```
 
 ## Marca
 
 Los assets de marca están en `public/brand/`:
 
-- `logotipo-nexicode.svg`
-- `logotipo-nexicode-footer.svg`
+- `logotipo-qhipa.svg`
+- `logotipo-qhipa-footer.svg`
 - `favicon.svg`
-- `isotipo-nexicode.svg`
+- `isotipo-qhipa.svg`
 - `user.png`
 
 ## Contacto
@@ -108,7 +108,7 @@ Los assets de marca están en `public/brand/`:
 El formulario del modal usa `mailto:` apuntando a:
 
 ```text
-hola@nexicode.dev
+hola@qhipa.dev
 ```
 
 Puedes cambiar ese correo en `src/components/contact-modal.tsx`.

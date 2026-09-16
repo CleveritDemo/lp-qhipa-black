@@ -455,23 +455,29 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
   return (
     <div className="space-y-6">
     <div
-      className="group [perspective:900px]"
+      className="group relative z-20 overflow-visible [perspective:900px]"
       onMouseMove={handleMouseMove}
       onMouseLeave={resetTilt}
     >
       <div
-        className="border-glow relative overflow-visible rounded-2xl border border-border-subtle bg-[#07080a] shadow-2xl shadow-black/60 ring-1 ring-white/5 transition-transform duration-300 ease-out will-change-transform"
+        className="pointer-events-none absolute -inset-x-6 bottom-[-3rem] z-0 h-28 rounded-[50%] bg-black/35 blur-2xl transition-transform duration-300 ease-out"
+        style={{
+          transform: `translate3d(${tilt.x * -48}px, ${tilt.y * 28}px, 0) scale(${1.02 + Math.abs(tilt.x) * 0.04})`,
+        }}
+      />
+      <div
+        className="border-glow relative z-10 overflow-visible rounded-2xl border border-border-subtle bg-[#07080a] shadow-2xl shadow-black/60 ring-1 ring-white/5 transition-transform duration-300 ease-out will-change-transform"
         style={{
           transform: `rotateX(${tilt.y * -18}deg) rotateY(${tilt.x * 24}deg) scale3d(1.04, 1.04, 1) translateZ(0)`,
           transformStyle: "preserve-3d",
-          boxShadow: `${tilt.x * -68}px ${46 + tilt.y * 44}px 145px rgba(0, 0, 0, 0.76)`,
+          boxShadow: `${tilt.x * -18}px ${18 + tilt.y * 14}px 48px rgba(0, 0, 0, 0.28)`,
         }}
       >
       <div className="flex h-9 items-center justify-between rounded-t-2xl border-b border-border-subtle bg-surface px-3 text-xs text-text-muted">
         <div className="flex min-w-0 items-center gap-3">
           <div className="flex items-center gap-2 pr-1 font-semibold text-text-primary">
             <span className="text-primary">&gt;</span>
-            <span>nexicode</span>
+            <span>qhipa</span>
           </div>
           <div className="hidden items-center gap-1 overflow-hidden md:flex">
             {productTabs.map(({ label, icon: Icon }) => {
@@ -495,7 +501,7 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
         </div>
         <div className="hidden items-center gap-4 text-text-dim sm:flex">
           <Search className="size-3.5" />
-          <span>Nexi Dark</span>
+          <span>Qhipa Dark</span>
           <span>08:39</span>
           <Settings className="size-3.5" />
         </div>
@@ -583,7 +589,7 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
                 <div className="flex items-start gap-3">
                   <Image
                     src={assetPath("/brand/favicon.svg")}
-                    alt="Nexi code agent"
+                    alt="Qhipa agent"
                     width={124}
                     height={124}
                     className="mt-0.5 size-9 shrink-0 rounded-xl"
@@ -630,7 +636,7 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
                 <div className="flex items-start gap-3">
                   <Image
                     src={assetPath("/brand/favicon.svg")}
-                    alt="Nexi code agent"
+                    alt="Qhipa agent"
                     width={124}
                     height={124}
                     className="mt-0.5 size-9 shrink-0 rounded-xl"
@@ -678,7 +684,7 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
                     <div className="flex items-start gap-3">
                       <Image
                         src={assetPath("/brand/favicon.svg")}
-                        alt="Nexi code Tech Lead agent"
+                        alt="Qhipa Tech Lead agent"
                         width={124}
                         height={124}
                         className="mt-0.5 size-9 shrink-0 rounded-xl"
@@ -694,7 +700,7 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
                   <div className="flex items-start gap-3">
                     <Image
                       src={assetPath("/brand/favicon.svg")}
-                      alt="Nexi code developer agent"
+                      alt="Qhipa developer agent"
                       width={124}
                       height={124}
                       className="mt-0.5 size-9 shrink-0 rounded-xl"
@@ -722,7 +728,7 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
                     <div className="flex items-start gap-3">
                       <Image
                         src={assetPath("/brand/favicon.svg")}
-                        alt="Nexi code Developer agent"
+                        alt="Qhipa Developer agent"
                         width={124}
                         height={124}
                         className="mt-0.5 size-9 shrink-0 rounded-xl"
@@ -738,7 +744,7 @@ export function ProductMockup({ variant = "product" }: ProductMockupProps) {
                   <div className="flex items-start gap-3">
                     <Image
                       src={assetPath("/brand/favicon.svg")}
-                      alt="Nexi code QA agent"
+                      alt="Qhipa QA agent"
                       width={124}
                       height={124}
                       className="mt-0.5 size-9 shrink-0 rounded-xl"

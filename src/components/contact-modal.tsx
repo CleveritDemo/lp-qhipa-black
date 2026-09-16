@@ -39,7 +39,7 @@ export function ContactModal({ children }: ContactModalProps) {
     const name = data.get("name")?.toString() ?? "";
     const email = data.get("email")?.toString() ?? "";
     const message = data.get("message")?.toString() ?? "";
-    const subject = intent === "demo" ? "Solicitar demo de Nexi code" : "Mensaje para Nexi code";
+    const subject = intent === "demo" ? "Solicitar demo de Qhipa" : "Mensaje para Qhipa";
     const body = [
       `Nombre: ${name}`,
       `Email: ${email}`,
@@ -48,7 +48,7 @@ export function ContactModal({ children }: ContactModalProps) {
       message,
     ].join("\n");
 
-    window.location.href = `mailto:hola@nexicode.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:hola@qhipa.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setIsOpen(false);
   }
 
@@ -143,7 +143,7 @@ export function ContactModal({ children }: ContactModalProps) {
                 placeholder={
                   intent === "demo"
                     ? "Cuéntanos sobre tu equipo y qué flujo quieres ver en la demo."
-                    : "Escribe tu mensaje para el equipo de Nexi code."
+                    : "Escribe tu mensaje para el equipo de Qhipa."
                 }
                 className="w-full resize-none rounded-2xl border border-border-subtle bg-canvas px-4 py-3 text-sm text-text-primary outline-none transition placeholder:text-text-dim focus:border-primary"
               />
